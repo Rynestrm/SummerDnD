@@ -13,7 +13,7 @@ searchForSpells.onkeyup = function(keyEvent) {
   const typedText = keyEvent.target.value
   console.log(typedText)
   const resultingArray = spellList.filter(function(spell) {
-    return spell.name.toLowerCase(typedText).includes(typedText)
+    return spell.name.toLowerCase(typedText).includes(typedText.toLowerCase())
   })
   console.log(resultingArray)
   spellName.innerHTML = JSON.stringify(resultingArray, null, 2)

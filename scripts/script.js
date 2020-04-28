@@ -13,8 +13,9 @@ getMonsters();
 searchForMonsters.onkeyup = function(keyEvent) {
   const typedText = keyEvent.target.value
   console.log(typedText)
-  const resultingArray = monsterList.filter(function(monster) {
-    return monster.name.toLowerCase(typedText).includes(typedText)
+  const resultingArray = monsterList.filter
+  (function(monster) {
+    return monster.name.toLowerCase(typedText).includes(typedText.toLowerCase())
   })
   console.log(resultingArray)
   monsterName.innerHTML = JSON.stringify(resultingArray, null, 2)
