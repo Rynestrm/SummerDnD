@@ -19,4 +19,6 @@ searchForSpells.onkeyup = function(keyEvent) {
   spellName.innerHTML = JSON.stringify(resultingArray, null, 2)
 }
 
+
+// same thing as aboce but using an arrow function
 // const resultingArray = monsterList.filter(monster => monster.name.toLowerCase(typedText).includes(typedText))
