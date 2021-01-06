@@ -1,7 +1,7 @@
 // variables
 const monsterList = [];
 const searchForMonsters = document.querySelector("input");
-const monsterName = document.querySelector("#monster");
+// const monsterName = document.querySelector("#monster");
 let monsters = document.querySelector(".monsters");
 
 // getting json data
@@ -22,42 +22,57 @@ searchForMonsters.onkeyup = function (keyEvent) {
       .toLowerCase(typedText)
       .includes(typedText.toLowerCase());
   });
-  // monsterName.innerHTML = JSON.stringify(resultingArray, null, 2);
-  // render(resultingArray);
+  // monsters.innerHTML = JSON.stringify(resultingArray, null, 2);
+  render(resultingArray);
 };
 
 // const outPut = monsterSearch.map(function (monsters) {
 //   return`test`
 // })
 
-// function render(resultingArray) {
-//   resultingArray.map(function(monster) {
-//     // console.log(resultingArray);
-//     return `
-//     <pre class="monsters">
-//     <h2>${monster.name}</h2>
-//     <h3>Meta</h3>
-//     <h3>Armor Class</h3>
-//     <div>
-//       <h3>Traits</h3>
-//       <p>Trait text</p>
-//     </div>
-//     <div>
-//       <h3>Actions</h3>
-//       <p>Action Text</p>
-//     </div>
-//     <div>
-//       <h3>Legendary Actions</h3>
-//       <p>Legendary Text</p>
-//     </div>
-//     <div>
-//       <img src="" alt="monster image">
-//     </div>
-//   </pre>`
-//   });
-// }
+function render(resultingArray) {
+  resultingArray.map(function(monster) {
+    console.log(resultingArray);
+    return monsters.innerHTML = `
+    <div class="monsters row">
+      <div class="col-md-6">
+        <h2>${monster.name}</h2>
+        <h3>${monster.meta}</h3>
+        <h3>Fix this! ${monster.Armor}</h3>
+        <div>
+          <h3>Stats</h3>
+          <p>Charisma: ${monster.CHA ?? "none"}</p>
+          <p>Charisma Modifier: ${monster.CHA_mod ?? "none"}</p>
+          <p>Consitution: ${monster.CON ?? "none"}</p>
+          <p>Consitution Modifier: ${monster.CON_mod ?? "none"}</p>
+          <p>Dexterity: ${monster.DEX ?? "none"}</p>
+          <p>Dexterity Modifier: ${monster.DEX_mod ?? "none"}</p>
+          <p>Intellect: ${monster.INT ?? "none"}</p>
+          <p>Intellect Modifier: ${monster.INT_mod ?? "none"}</p>
+          <p>Strength: ${monster.STR ?? "none"}</p>
+          <p>Strength Modifier: ${monster.STR_mod ?? "none"}</p>
+          <p>Wisdom: ${monster.WIS ?? "none"}</p>
+          <p>Wisdom Modifier: ${monster.WIS_mod ?? "none"}</p>
+        </div>
+      </div><!--end of col-->
+      <div class="col-md-6">
+        <div>
+        <h3>Actions</h3>
+        <p>${monster.Actions}</p>
+        </div>
+        <div>
+          <h3>Legendary Actions</h3>
+          <p>Legendary Text</p>
+        </div>
+        <div>
+          <img src="${monster.img_url}" alt="monster image">
+        </div>
+        </div>
+      </div><!--end of col-->
+    </div>`
+  }).join("");
+}
 
-// monsters.innerHTML = outPut;
 
 /* Name
 Meta

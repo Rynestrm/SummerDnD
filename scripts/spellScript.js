@@ -20,5 +20,5 @@ searchForSpells.onkeyup = function(keyEvent) {
 }
 
 
-// same thing as aboce but using an arrow function
+// same thing as above but using an arrow function
 // const resultingArray = monsterList.filter(monster => monster.name.toLowerCase(typedText).includes(typedText))
